@@ -1,0 +1,22 @@
+（注意：不要去官网下载，因为你根本打不开，而github上的连接刚好可以打开并进行下载安装）
+https://codechina.csdn.net/mirrors/tonyrobotics/roboware/-/tree/master/Studio
+上述的即为我们所需的RobotWare软件，其版本为roboware-studio_1.2.0-1524709819_amd64.deb
+在需要的时候可以打开上述逇连接应以访问制定中国的区域，并进行相关的下载安装，
+安装步骤如下：
+1、为了支持Python调试功能，需要安装pylint：
+    $ sudo apt-get python3-pip
+    $ sudo python -m pip install pylint
+    (请更新pip工具为最新版，以便于后续的安装和使用)
+2、为了获得更好的代码阅读体验，自动格式化整理代码，需要安装clang-format：
+    $ sudo apt-get install clang-format-3.8
+3、接下来开始安装：
+    $ cd ~/下载/
+    $ sudo dpkg -i roboware-studio_1.2.0-1524709819_amd64.deb
+4、安装完成后，直接在终端输入roboware-studio
+回车即可打开，或者在应用程序端搜索以打开
+5、有些同学打开软件后可能会提示git不是最新版本，依次执行下面的命令即可更新至最新版：
+    $ git --version
+    $ sudo add-apt-repository ppa:git-core/ppa
+    $ sudo apt-get update
+    $ sudo apt-get install git
+    $ git --version
