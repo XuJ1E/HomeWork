@@ -1,0 +1,12 @@
+下述即为VSCode的下载连接，仅供广大学习爱好者提供下载和学习连接
+https://code.visualstudio.com/Download
+下述为其安装步骤：
+1、直接在官网下载deb包：https://code.visualstudio.com/Download
+2、将下载的文件放到想要安装的位置
+3、运行下面的安装命令
+在对应的文件夹打开终端运行下面命令：
+    $ sudo dpkg -i code_1.44.2-1587059832_amd64.deb
+
+上述的方法比较适合对Windows依恋感强烈的伙伴，即为我们所说的下载安装包
+然后使用指定的安装命令进行安装
+记得使用终端命令行启动VSCode进行软件的初始化
