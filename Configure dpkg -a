@@ -1,0 +1,133 @@
+1、description:when we meet a difficult question as fellow:
+					install ros-kinetic-librealsense fails; drivers/media/usb/uvc/uvc_driver.c no such file
+					and also this 
+					When trying to install ros-kinetic-librealsense the Setting up step fails. The Directory: drivers/media/usb/uvc/ doesn't contain any code files i.e. uvc_driver.c.
+					
+					
+2、just do the "enter" three times just ok 
+
+
+3、ryan@ryan:~$ uname -a
+Linux tros 4.4.0-154-generic #181-Ubuntu SMP Tue Jun 25 05:29:03 UTC 2019 x86_64 x86_64 x86_64 GNU/Linu
+
+
+ryan@ryan:~$ sudo dpkg --configure -a
+正在设置 ros-kinetic-librealsense (1.12.2-1xenial-20210506-081035-0800) ...
+
+Kernel preparation unnecessary for this kernel.  Skipping...
+
+Running the pre_build script:
+
+dkms: Pre-build script started...
+
+Downloading kernel sources...
+正在读取软件包列表...
+选择 linux-signed-hwe 作为源代码包而非 linux-image-4.15.0-142-generic
+需要下载 14.0 kB 的源代码包。
+获取:1 http://mirrors.aliyun.com/ubuntu xenial-updates/main linux-signed-hwe 4.15.0-142.146~16.04.1 (dsc) [1,813 B]
+获取:2 http://mirrors.aliyun.com/ubuntu xenial-updates/main linux-signed-hwe 4.15.0-142.146~16.04.1 (tar) [12.2 kB]
+gpgv: 于 2021年04月13日 星期二 17时13分08秒 CST 创建的签名，使用 RSA，钥匙号 70E1162B
+gpgv: 无法检查签名：找不到公钥
+dpkg-source: 警告: 对 ./linux-signed-hwe_4.15.0-142.146~16.04.1.dsc 校验签名失败
+dpkg-source: info: extracting linux-signed-hwe in linux-signed-hwe-4.15.0
+dpkg-source: info: unpacking linux-signed-hwe_4.15.0-142.146~16.04.1.tar.xz
+W: 文件'linux-signed-hwe_4.15.0-142.146~16.04.1.dsc'无法被用户'_apt'访问，无法降低权限以进行下载。 - pkgAcquire::Run (13: 权限不够)
+已下载 14.0 kB，耗时 0秒 (42.5 kB/s)
+grep: drivers/media/usb/uvc/uvc_driver.c: 没有那个文件或目录
+INFO: No Intel RealSense(TM) cameras are currently supported.
+Patching uvcvideo sources...
+can't find file to patch at input line 5
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|diff --git a/drivers/media/usb/uvc/Makefile b/drivers/media/usb/uvc/Makefile
+|index c26d12fdb8f4..d86cf22155d1 100644
+|--- a/drivers/media/usb/uvc/Makefile
+|+++ b/drivers/media/usb/uvc/Makefile
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+can't find file to patch at input line 14
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|diff --git a/drivers/media/usb/uvc/uvc_driver.c b/drivers/media/usb/uvc/uvc_driver.c
+|index d11fd6ac2df0..914164137a13 100644
+|--- a/drivers/media/usb/uvc/uvc_driver.c
+|+++ b/drivers/media/usb/uvc/uvc_driver.c
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+can't find file to patch at input line 100
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|diff --git a/drivers/media/usb/uvc/uvcvideo.h b/drivers/media/usb/uvc/uvcvideo.h
+|index f0f2391e1b43..532ca19675a5 100644
+|--- a/drivers/media/usb/uvc/uvcvideo.h
+|+++ b/drivers/media/usb/uvc/uvcvideo.h
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+can't find file to patch at input line 163
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|diff --git a/include/uapi/linux/videodev2.h b/include/uapi/linux/videodev2.h
+|index a0e87d16b726..e6c1ec69cba4 100644
+|--- a/include/uapi/linux/videodev2.h
+|+++ b/include/uapi/linux/videodev2.h
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+
+Building module:
+cleaning build area....(bad exit status: 2)
+make KERNELRELEASE=4.15.0-142-generic -C /var/lib/dkms/uvcvideo/1.1.1-3-realsense/build/linux-src M=drivers/media/usb/uvc/....(bad exit status: 2)
+ERROR: Cannot create report: [Errno 17] File exists: '/var/crash/ros-kinetic-librealsense.0.crash'
+Error! Bad return status for module build on kernel: 4.15.0-142-generic (x86_64)
+Consult /var/lib/dkms/uvcvideo/1.1.1-3-realsense/build/make.log for more information.
+WARNING: DKMS module failed to installed; removing...
+
+------------------------------
+Deleting module version: 1.1.1-3-realsense
+completely from the DKMS tree.
+------------------------------
+Done.
+WARNING: Unknown configuration for Intel RealSense(TM) cameras!
+       To resolve, please follow the installation directions at:
+           http://wiki.ros.org/librealsense#Installation
+正在设置 ros-kinetic-realsense-camera (1.8.1-1xenial-20210506-082012-0800) ...
+正在设置 ros-kinetic-turtlebot-bringup (2.4.2-0xenial-20210506-083121-0800) ...
+正在设置 ros-kinetic-turtlebot-teleop (2.4.2-0xenial-20210506-083849-0800) ...
+正在设置 ros-kinetic-turtlebot-rviz-launchers (2.3.1-0xenial-20210506-084147-0800) ...
+正在处理用于 libc-bin (2.31-0ubuntu9.2) 的触发器 ...
+
+
+and then we can get the upgrade commend
+as follow
+
+
+ryan@ryan:~$ sudo apt-get upgrade
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+正在计算更新... 完成
+
+*The following packages could receive security updates with UA Infra: ESM service enabled:
+  libpam0g libdjvulibre-text bluez libwebp5 libqpdf21 gstreamer1.0-alsa intel-microcode linux-headers-generic linux-libc-dev libx11-xcb-dev libcurl3 libxml2-utils libgrilo-0.2-1 gstreamer1.0-plugins-base-apps libavahi-client-dev libpam-modules openssl ruby2.3 bluez-cups libavahi-common-dev ntfs-3g git-man libmysqlclient-dev libsystemd0 linux-image-generic-hwe-16.04 libgd3 libavahi-glib1 binutils squashfs-tools linux-signed-generic-hwe-16.04 linux-generic-hwe-16.04 libavahi-common-data libavahi-common3 libpython3.5 python3.5 git python3.5-minimal udev gstreamer1.0-plugins-base libpam-runtime isc-dhcp-common python3.5-dev libx11-6 libudev1 libwebpdemux1 libavahi-ui-gtk3-0 libaspell15 libapr1 apport libavahi-core-dev libudev-dev libruby2.3 python3-apport avahi-daemon systemd-sysv libcurl4-openssl-dev libavahi-core7 libgcrypt20 libxml2-dev liblz4-1 libpam-systemd libgstreamer-plugins-base1.0-0 distro-info-data libsndfile1 gstreamer1.0-x systemd libpython3.5-dev gir1.2-gst-plugins-base-1.0 libssl-dev libssl-doc libwebpmux1 mysql-common libpam-modules-bin libx11-data aspell libopenexr22 openssh-client libmysqlclient20 avahi-autoipd libx11-dev qpdf libapr1-dev libx11-doc bluez-obexd libdjvulibre21 apport-gtk libxml2 libwebp-dev ca-certificates avahi-utils linux-headers-generic-hwe-16.04 libpython3.5-stdlib libbluetooth3 libexiv2-14 libpython3.5-minimal libavahi-client3 curl isc-dhcp-client git-core python3-problem-report liblz4-dev libcurl3-gnutls libx11-xcb1 libssl1.0.0
+Learn more about UA Infra: ESM service for Ubuntu 16.04 at https://ubuntu.com/16-04
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 0 个软件包未被升级。
+ryan@ryan:~$ 
