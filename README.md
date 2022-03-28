@@ -5,17 +5,21 @@
 #### 参与贡献
 
 1.  Fork 本仓库  
+  
     We fork the repository from some beautiful and useful repositories  
     
-2.  新建 Feat_xxx 分支
+2.  新建 Feat_xxx 分支  
+
     We create the tag01, which was used for softmax learn，  
     and the code just coding by jupyter notebook  
     
-3.  提交代码
+3.  提交代码  
+
     We push the code and implement the code by jupyter notebook and the pycharm，  
     as for the lience，we can register from the pipline that just for student  
     
-4.  新建 Pull Request
+4.  新建 Pull Request  
+
     We can create new repositories，of course， the new repositories just for the implement of study  
     and pull the request from shell or another way
 
