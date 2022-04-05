@@ -1,6 +1,6 @@
 # Begin
 ## DailyWork
-### xample for study python and others
+### Sample for study python and others
 Both of that have been upload, the terms of the study and the review
 
 ### cientific research
